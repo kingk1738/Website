@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Chauffeur | Premier Chauffeur Services</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body class="booking-page">
+
+  <!-- Navigation -->
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&#9670;</span>
+        <span class="logo-text">Premier<span class="gold"> Chauffeur</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#fleet">Fleet</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="booking.html" class="nav-cta active">Book Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Booking Header -->
+  <div class="booking-header">
+    <div class="container">
+      <p class="section-sub">Ready to Travel</p>
+      <h1>Book Your <span class="gold">Chauffeur</span></h1>
+      <p class="booking-header-sub">Complete the form below for an instant price. £2 per mile + £25 booking fee.</p>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="steps-bar">
+    <div class="container">
+      <div class="steps">
+        <div class="step active" id="step-indicator-1">
+          <div class="step-circle">1</div>
+          <span>Journey Details</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-indicator-2">
+          <div class="step-circle">2</div>
+          <span>Your Details</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" id="step-indicator-3">
+          <div class="step-circle">3</div>
+          <span>Payment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Booking Area -->
+  <section class="booking-section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <!-- Form -->
+        <div class="booking-form-wrap">
+          <form id="booking-form" novalidate>
+
+            <!-- Step 1: Journey Details -->
+            <div class="form-step" id="form-step-1">
+              <h2 class="step-title">Journey Details</h2>
+
+              <div class="form-group">
+                <label for="pickup-date">Pickup Date <span class="required">*</span></label>
+                <input type="date" id="pickup-date" name="pickup-date" required />
+                <span class="field-error" id="error-pickup-date"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pickup-time">Pickup Time <span class="required">*</span></label>
+                  <input type="time" id="pickup-time" name="pickup-time" required />
+                  <span class="field-error" id="error-pickup-time"></span>
+                </div>
+                <div class="form-group">
+                  <label for="passengers">Passengers <span class="required">*</span></label>
+                  <select id="passengers" name="passengers" required>
+                    <option value="">Select</option>
+                    <option value="1">1 Passenger</option>
+                    <option value="2">2 Passengers</option>
+                    <option value="3">3 Passengers</option>
+                    <option value="4">4 Passengers</option>
+                    <option value="5">5 Passengers</option>
+                    <option value="6">6 Passengers</option>
+                    <option value="7">7 Passengers</option>
+                  </select>
+                  <span class="field-error" id="error-passengers"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pickup-location">Pickup Location <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <span class="input-icon green-dot">&#11044;</span>
+                  <input type="text" id="pickup-location" name="pickup-location" placeholder="e.g. 10 Downing Street, London" required autocomplete="off" />
+                </div>
+                <span class="field-error" id="error-pickup-location"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="destination">Destination <span class="required">*</span></label>
+                <div class="input-with-icon">
+                  <span class="input-icon red-dot">&#11044;</span>
+                  <input type="text" id="destination" name="destination" placeholder="e.g. Heathrow Airport, London" required autocomplete="off" />
+                </div>
+                <span class="field-error" id="error-destination"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="vehicle-type">Vehicle Preference</label>
+                <div class="vehicle-options">
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle-type" value="saloon" checked />
+                    <div class="vehicle-card">
+                      <div class="vehicle-emoji">&#128664;</div>
+                      <strong>Saloon</strong>
+                      <span>Up to 4 passengers</span>
+                    </div>
+                  </label>
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle-type" value="estate" />
+                    <div class="vehicle-card">
+                      <div class="vehicle-emoji">&#128652;</div>
+                      <strong>Estate / MPV</strong>
+                      <span>Up to 7 passengers</span>
+                    </div>
+                  </label>
+                  <label class="vehicle-option">
+                    <input type="radio" name="vehicle-type" value="suv" />
+                    <div class="vehicle-card">
+                      <div class="vehicle-emoji">&#128665;</div>
+                      <strong>Luxury SUV</strong>
+                      <span>Up to 4 passengers</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="special-requests">Special Requests</label>
+                <textarea id="special-requests" name="special-requests" rows="3" placeholder="Child seat, meet &amp; greet, specific route preferences, etc."></textarea>
+              </div>
+
+              <div class="distance-result" id="distance-result" style="display:none">
+                <div class="distance-inner">
+                  <span class="distance-label">Estimated Distance</span>
+                  <span class="distance-value" id="distance-value">— miles</span>
+                </div>
+                <div class="distance-note">Distance is calculated as the road route between your pickup and destination.</div>
+              </div>
+
+              <button type="button" class="btn btn-primary btn-block" id="step1-next">Calculate Price &amp; Continue</button>
+            </div>
+
+            <!-- Step 2: Personal Details -->
+            <div class="form-step hidden" id="form-step-2">
+              <h2 class="step-title">Your Details</h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name <span class="required">*</span></label>
+                  <input type="text" id="first-name" name="first-name" placeholder="John" required />
+                  <span class="field-error" id="error-first-name"></span>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name <span class="required">*</span></label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Smith" required />
+                  <span class="field-error" id="error-last-name"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="john.smith@example.com" required />
+                <span class="field-error" id="error-email"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" required />
+                <span class="field-error" id="error-phone"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="flight-number">Flight Number <span class="optional">(if applicable)</span></label>
+                <input type="text" id="flight-number" name="flight-number" placeholder="e.g. BA0247" />
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="return-journey" name="return-journey" />
+                  <span class="checkbox-custom"></span>
+                  I need a return journey
+                </label>
+              </div>
+
+              <div class="return-fields hidden" id="return-fields">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="return-date">Return Date</label>
+                    <input type="date" id="return-date" name="return-date" />
+                  </div>
+                  <div class="form-group">
+                    <label for="return-time">Return Time</label>
+                    <input type="time" id="return-time" name="return-time" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="terms" name="terms" required />
+                  <span class="checkbox-custom"></span>
+                  I agree to the <a href="#" class="gold-link">Terms &amp; Conditions</a> and <a href="#" class="gold-link">Privacy Policy</a>
+                </label>
+                <span class="field-error" id="error-terms"></span>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-outline" id="step2-back">&#8592; Back</button>
+                <button type="button" class="btn btn-primary" id="step2-next">Continue to Payment &#8594;</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="form-step hidden" id="form-step-3">
+              <h2 class="step-title">Payment Details</h2>
+
+              <div class="payment-notice">
+                <span class="payment-lock">&#128274;</span>
+                Secure payment — your card details are encrypted and never stored.
+              </div>
+
+              <div class="form-group">
+                <label for="card-name">Name on Card <span class="required">*</span></label>
+                <input type="text" id="card-name" name="card-name" placeholder="John Smith" required />
+                <span class="field-error" id="error-card-name"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="card-number">Card Number <span class="required">*</span></label>
+                <div class="card-input-wrap">
+                  <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required autocomplete="cc-number" />
+                  <div class="card-icons">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/72px-Mastercard-logo.svg.png" alt="Mastercard" class="card-icon" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/200px-Visa_Inc._logo.svg.png" alt="Visa" class="card-icon" />
+                  </div>
+                </div>
+                <span class="field-error" id="error-card-number"></span>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-expiry">Expiry Date <span class="required">*</span></label>
+                  <input type="text" id="card-expiry" name="card-expiry" placeholder="MM / YY" maxlength="7" required autocomplete="cc-exp" />
+                  <span class="field-error" id="error-card-expiry"></span>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvv">CVV <span class="required">*</span>
+                    <span class="cvv-tooltip" title="3-digit code on the back of your card">&#9432;</span>
+                  </label>
+                  <input type="text" id="card-cvv" name="card-cvv" placeholder="123" maxlength="4" required autocomplete="cc-csc" />
+                  <span class="field-error" id="error-card-cvv"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="billing-postcode">Billing Postcode <span class="required">*</span></label>
+                <input type="text" id="billing-postcode" name="billing-postcode" placeholder="SW1A 2AA" required />
+                <span class="field-error" id="error-billing-postcode"></span>
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-outline" id="step3-back">&#8592; Back</button>
+                <button type="submit" class="btn btn-primary btn-pay" id="pay-btn">
+                  <span class="pay-lock">&#128274;</span>
+                  Confirm &amp; Pay <span id="pay-total"></span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Sidebar: Price Summary -->
+        <div class="booking-sidebar">
+          <div class="price-summary" id="price-summary">
+            <h3 class="summary-title">&#9670; Journey Summary</h3>
+
+            <div class="summary-journey" id="summary-journey">
+              <div class="journey-placeholder">
+                <span>&#128205;</span>
+                <p>Enter your journey details to see your price quote.</p>
+              </div>
+            </div>
+
+            <div class="price-breakdown" id="price-breakdown" style="display:none">
+              <div class="breakdown-row">
+                <span>Distance</span>
+                <span id="summary-distance">— miles</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Rate</span>
+                <span>£2.00 per mile</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Mileage cost</span>
+                <span id="summary-mileage">£—</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Booking fee</span>
+                <span>£25.00</span>
+              </div>
+              <div class="breakdown-row return-row hidden" id="return-row">
+                <span>Return journey</span>
+                <span id="summary-return">£—</span>
+              </div>
+              <div class="breakdown-total">
+                <span>Total</span>
+                <span id="summary-total" class="gold">£—</span>
+              </div>
+            </div>
+
+            <div class="summary-features">
+              <div class="summary-feature"><span>&#10003;</span> Meet &amp; Greet included</div>
+              <div class="summary-feature"><span>&#10003;</span> Flight monitoring</div>
+              <div class="summary-feature"><span>&#10003;</span> Complimentary water</div>
+              <div class="summary-feature"><span>&#10003;</span> Free cancellation 24hrs</div>
+            </div>
+          </div>
+
+          <div class="sidebar-contact">
+            <p>Need help? Call us:</p>
+            <a href="tel:+447700000000" class="sidebar-phone">+44 (0) 7700 000000</a>
+            <p class="sidebar-hours">Available 24/7</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay hidden" id="confirmation-modal">
+    <div class="modal">
+      <div class="modal-icon">&#10003;</div>
+      <h2>Booking Confirmed!</h2>
+      <p>Thank you for booking with Premier Chauffeur Services. A confirmation has been sent to <strong id="confirm-email"></strong>.</p>
+      <div class="modal-ref">
+        Booking reference: <strong id="confirm-ref"></strong>
+      </div>
+      <div class="modal-details" id="modal-details"></div>
+      <p class="modal-note">Your chauffeur will contact you 24 hours before your journey. If you have any questions, please call us on <strong>+44 (0) 7700 000000</strong>.</p>
+      <a href="index.html" class="btn btn-primary">Return to Home</a>
+    </div>
+  </div>
+
+  <script src="booking.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+    document.getElementById('return-journey').addEventListener('change', function () {
+      document.getElementById('return-fields').classList.toggle('hidden', !this.checked);
+      updatePrice();
+    });
+  </script>
+</body>
+</html>
